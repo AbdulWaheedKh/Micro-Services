@@ -4,6 +4,7 @@ import com.hexagon.schoolservice.entity.School;
 import com.hexagon.schoolservice.service.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -13,6 +14,20 @@ import java.util.List;
 public class SchoolController {
     @Autowired
     private SchoolService schoolService;
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+
+
+
+
+
+
+
+
+
+
 
     @PostMapping
     public School addSchool(@RequestBody School school){
@@ -26,4 +41,5 @@ public class SchoolController {
     public School fetchSchoolById(@PathVariable int id){
         return schoolService.fetchSchoolById(id);
     }
+
 }
